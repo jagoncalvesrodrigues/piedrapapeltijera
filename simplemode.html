@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="rules rulesOut" id="rules">
+        <span>RULES</span>
+        <img src="./images/image-rules.svg" alt="">
+        <a href="" id="close-rules">X</a>
+    </div>
+    <main class="main2">
+        <div class="nav">
+            <img src="./images/logo.svg" alt="">
+            <div class="score">
+                <span class="score-letters">SCORE</span>
+                <span class="points" id="score">0</span>
+            </div>
+        </div>
+        <div class="bg-triangle rulesIn" id="main-options">
+            <div class="top-triangle" id="game">
+                <div class="paper" data-item="paper">
+                    <img class="paper-img" src="./images/icon-paper.svg" alt="">
+                </div>
+                <div class="rock" data-item="rock">
+                    <img class="rock-img" src="./images/icon-rock.svg" alt="">
+                </div>
+                <div class="scissors" data-item="scissors">
+                    <img class="scissors-img" src="./images/icon-scissors.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="movement rulesOut" id="movements">
+            <div class="results">
+                <div class="specific-result">
+                    <div class="paper" id="your-choice">
+                        <a href="" ><img id="result-user" id="" alt=""></a>
+                    </div>
+                    <span>YOU PICKED</span>
+                </div>
+                <div class="specific-result">
+                    <div class="scissors" id="pc-choice">
+                        <a href="" ><img id="result-pc" src="" alt=""></a>
+                    </div>
+                    <span>THE HOUSE PICKED</span>
+                </div>
+            </div>
+            <div class="info-results">
+                <span id="result-text">YOU WIN</span>
+                <a href="" class="replay" id="playagain">PLAY AGAIN</a>
+            </div>
+        </div>
+        <button id="rules-button" class="rules-button">RULES</button>
+    </main>
+<script src="./src/script.js"></script>
+</body>
+</html>

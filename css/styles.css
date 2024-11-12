@@ -1,3 +1,7 @@
+:root{
+    --radial-inside:#1F3757;
+    --radial-outside:#131537;
+}
 *{
     box-sizing: border-box;
 }
@@ -18,4 +22,202 @@ ul{
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, var(--radial-inside), var(--radial-outside));
+    display: flex;
+    justify-content: center;
+}
+@media screen and (width >= 750px){
+    .main{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.rules{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media screen and (width >= 750px){
+    .rules{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+.simple-mode{
+    width: 300px;
+    height: 300px;
+}
+
+
+/* STYLES SIMPLE MODE */
+
+.rules{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 2;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.rulesIn{
+    display: flex;
+}
+.rulesOut{
+    display: none;
+}
+.rules span, .rules a{
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #3B4262;
+}
+.rules a{
+    color: #979797;
+}
+.main2{
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, var(--radial-inside), var(--radial-outside));
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid white;
+    height: 15%;
+    padding: 12px;
+    margin-bottom: 105px;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    width: 100px;
+    height: 100%;
+}
+.score-letters{
+    font-size: 10px;
+    letter-spacing: 1.56px;
+    color: #2A45C2;
+    font-weight: 600;
+}
+.points{
+    font-size: 40px;
+    color: #565468;
+    font-weight: 700;
+}
+.bg-triangle{
+    width: 100%;
+    height: 40%;
+    background-image: url(../images/bg-triangle.svg);
+    background-position: center;
+    background-size: 312px, 282px;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.top-triangle{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 350px;
+}
+.paper-img, .scissors-img, .rock-img{
+    pointer-events:none;
+    margin: auto;
+}
+.paper, .scissors, .rock{
+    width: 125px;
+    height: 125px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+.paper{
+    border: 15px solid #4664F4;
+}
+.scissors{
+    border: 15px solid #EB9F0E;
+}
+.rock{
+    border: 15px solid #DB2E4D;
+    margin-top: 210px;
+}
+.rock a, .paper a, .scissors a{
+    margin: auto;
+}
+.rules-button{
+    width: 128px;
+    height: 40px;
+    margin: auto;
+    background: none;
+    border-style: none;
+    border: 1px solid white;
+    border-radius: 8px;
+    letter-spacing: 2.5px;
+    color: white;
+    font-weight: 600;
+}
+
+/* FINAL DE PARTIDA */
+.movement{
+    flex-direction: column;
+}
+.results{
+    display: flex;
+    justify-content: space-around;
+    height: 180px;
+    margin-bottom: 100px;
+}
+.specific-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.specific-result span{
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1.88px;
+}
+.specific-result div{
+    margin: auto;
+}
+.info-results{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.info-results span{
+    font-size: 56px;
+    color: white;
+    font-weight: 700;
+}
+.replay{
+    width: 220px;
+    height: 48px;
+    background-color: white;
+    color: #3B4262;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    align-content: center;
+    padding-left: 25%;
+    margin-left: 12px;
 }
