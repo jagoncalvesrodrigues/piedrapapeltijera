@@ -76,6 +76,27 @@ const gameRules = {
 const resultsImages = ()=>{
     yourChoiceElement.src
 }
+const result = ()=>{
+    if(choice === options[move]){
+        resultTextElement.textContent= `IT'S A TIE`;
+    }
+    console.log(rules[choice][move]);
+    if(rules[choice][options[move]]===true){
+        resultTextElement.textContent= `YOU WIN`;
+        score++
+    }else{
+        resultTextElement.textContent= `YOU LOST`;
+    }
+    changeIconResult();
+    updateScore();
+}
+
+const randomPlay = () =>{
+    const number = Math.floor(Math.random()*options.length);
+    move = options[number];
+    console.log(move);
+    result();
+}
 
 const setPlayerChoice = event => {
     console.dir(event.target.dataset.item);
@@ -88,29 +109,10 @@ const setPlayerChoice = event => {
     movementsElement.classList.remove('rulesIn');
     movementsElement.classList.remove('rulesOut');
     movementsElement.classList.add('rulesIn');
-    changeIconResult();
 }
 
-const randomPlay = () =>{
-    const number = Math.floor(Math.random()*options.length);
-    move = options[number];
-    console.log(move);
-    result();
-}
 
-const result = ()=>{
-    if(choice === options[move]){
-        resultTextElement.textContent= `IT'S A TIE`;
-    }
-    console.log(rules[choice][move]);
-    if(rules[choice][options[move]]===true){
-        resultTextElement.textContent= `YOU WIN`;
-        score++
-    }else{
-        resultTextElement.textContent= `YOU LOST`;
-    }
-    updateScore();
-}
+
 
 const updateScore = () => {
     scoreElement.textContent = score;
