@@ -40,7 +40,7 @@ const icons = {
     rock:"../images/icon-rock.svg"
 }
 //seleccionamos las reglas que tendra el juego
-const gameRules = {
+const rules = {
     rock: {
       scissors: true,
       lizard: true,
@@ -77,11 +77,11 @@ const resultsImages = ()=>{
     yourChoiceElement.src
 }
 const result = ()=>{
-    if(choice === options[move]){
+    if(choice === move){
         resultTextElement.textContent= `IT'S A TIE`;
     }
     console.log(rules[choice][move]);
-    if(rules[choice][options[move]]===true){
+    if(rules[choice][move]===true){
         resultTextElement.textContent= `YOU WIN`;
         score++
     }else{
@@ -116,12 +116,11 @@ const setPlayerChoice = event => {
 
 const updateScore = () => {
     scoreElement.textContent = score;
-    showResults();
   };
 
 const changeIconResult = () => {
     userResultElement.src = `../images/icon-${choice}.svg`;
-    pcResultElement.src = `../images/icon-${options[move]}.svg`;
+    pcResultElement.src = `../images/icon-${move}.svg`;
 };
 
 gameContainerElement.addEventListener('click',setPlayerChoice);
